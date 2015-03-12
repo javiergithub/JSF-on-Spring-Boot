@@ -26,9 +26,10 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import de.beyondjava.main.Initializer;
 
 @Configuration
-@ComponentScan(basePackages={""})
+@ComponentScan
 @EnableAutoConfiguration
 public class Main extends SpringBootServletInitializer {
 
@@ -44,7 +45,7 @@ public class Main extends SpringBootServletInitializer {
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
         FacesServlet servlet = new FacesServlet();
-        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(servlet, "*.jsf");
+        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(servlet, "*.xhtml");
 		return servletRegistrationBean;
     }
     
